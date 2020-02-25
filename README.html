@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>RCXDatalog</title>
+  </head>
+
+  <body>
+    <h1>RCXDatalog</h1> 
+
+<h2>Introduction</h2>
+<p>RCXDatalog is my first attempt to write a
+    GUI-based Unix tool to interact with the Lego Mindstorms RCX
+    brick.  Using
+    RCXDatalog, you can upload the datalog of the RCX and display it
+    on your screen or print it to a PostScript printer. Also, in the source code you will
+    find some additional widgets to show light and touch sensor readings of the
+    RCX. Presently, these widgets are not used in the main program.</p>
+
+    <p>RCXDatalog is inspired by Mark Overmars's <A href="http://www.cs.ruu.nl/people/markov/lego/rcxcc/">RCX
+    Command Center</a>, which runs in Windows. The communication code
+    (send.cpp and send.h) is based on the program "send.c" by Kekoa
+    Proudfoot. You can find it at <a href="http://graphics.stanford.edu/~kekoa/rcx/tools.html">
+    http://graphics.stanford.edu/~kekoa/rcx/tools.html</a>. </p>
+ 
+<ul>
+<li>Requires <a href="http://www.troll.no">Qt2.x</a>, <a href="http://sourceforge.net/projects/qwt">the Qwt widget library</a> and <a href="ftp://ftp.troll.no/freebies/tmake">tmake</a>.</li>
+<li>Tested on Linux 2.2.17 (SuSE 7.0), with the RCX1.0.</li>
+<li>The program is available under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a></li>
+</ul>
+
+
+   <p><span id="snapshot"><a name="snapshot"/><img src="snapshot.gif" alt="Screen snapshot of the main window of RCXDatalog" name="snapshot"><BR Clear=left><Font size=2><I>The main window of RCXDatalog. A datalog was just received from the RCX.</i></font></p></span>
+    
+<h2>Download RCXDatalog</h2>
+<ul>
+<li>Download the source code of RCXDatalog 0.01: <a href="ftp:rcxdatalog0.01.tar.gz">rcxdatalog0.01.tar.gz</a></li>
+</ul>
+
+    <h2>Installing RCXDatalog</h2>
+    <UL><LI>Make sure that the following libraries and tools are installed on your system.</li>
+	<UL><LI>Qt Library. Available from Troll Tech AS: <a href="http://www.troll.no">http://www.troll.no</a></li>
+	  <LI>The Qwt widget Library. Available from <a href="http://sourceforge.net/projects/qwt">http://sourceforge.net/projects/qwt</a></li>
+	  <LI>tmake. Available from Troll Tech AS: <a href="ftp://ftp.troll.no/freebies/tmake">ftp://ftp.troll.no/freebies/tmake</a></li>
+	</ul>
+	<LI>If you like, edit the file "send.h" to set DEFAULTTY to your favourite serial port. You can also set the environment variable RCXTTY.</li> 
+	<LI>Edit the file "rcxdatalog.pro", so that the INCLUDEPATH includes the location of the Qwt include files.</li>
+	<LI>Type: tmake rcxdatalog.pro > Makefile</li>
+	<LI>Type: make</li>
+    </UL>
+      
+If everything goes all right, the program will be compiled now. 
+    <p></p>
+    If you have any installation problems, please let me know at <a href="mailto:roel@science.uva.nl?subject=RCXDatalog">roel@science.uva.nl</a>. 
+    If you have any comments, additions, tips or if you have succesfully installed <I>RCXDatalog</I>, I would appreciate it if you would leave me a message at <a href="mailto:roel@science.uva.nl?subject=RCXDatalog">roel@science.uva.nl</a>.
+
+<h2>Using RCXDatalog</h2>
+      Using RCXDatalog is quite straight forward. Start <I>RCXDatalog</i> by typing
+<ul>
+<li>rcxdatalog</li>
+</ul>
+
+on the command prompt. 
+
+<p>If the infra red tower is connected to the
+correct serial port (set the environment variable RCXTTY if necessary),
+and your RCX is turned on and within reach of the infrared tower, the
+<a href="#snapshot">main window</a> will appear on your screen.</p>
+
+<p>If anything goes wrong at this stage, you will be warned by a dialog window. If things go wrong at a very premature stage (for example, if the serial port cannot be found), you may be warned on the terminal from which you have started <I>RCXDatalog</i>.</p>
+
+<p>Now, make sure that the datalog of your RCX contains some data, for example a number of
+light sensor readings. Then press <B>Upload datalog</b>. After a while
+a graph of the datalog values will appear in the main window.</p>
+
+You can print the graph using File->Print. Exit using File->Quit. 
+
+<h2>Revision history</h2>
+<li><strong>0.01:</strong> First release.
+
+    <hr>
+    <address><a href="mailto:roel@science.uva.nl">Roeland Merks</a></address>
+<!-- Created: Sat Dec 16 15:03:06 CET 2000 -->
+<!-- hhmts start -->
+Last modified: Thu Apr 19 19:12:06 CEST 2001
+<!-- hhmts end -->
+  </body>
+</html>
